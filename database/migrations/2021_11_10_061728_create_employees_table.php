@@ -15,14 +15,13 @@ class CreateEmployeesTable extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->string('lastname')->nullable();
-            $table->string('firstname')->nullable();
+            $table->string('lastname');
+            $table->string('firstname');
             $table->string('email')->unique();
-            $table->string('password')->nullable();
+            $table->string('password');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
