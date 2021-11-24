@@ -14,13 +14,13 @@ class CreateTimesheetsTable extends Migration
     public function up()
     {
         Schema::create('timesheets', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('employee_id')->constrained('employees')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('time_in');
-            $table->string('time_out');
-            $table->string('break_start');
-            $table->string('break_end');
-            $table->timestamps();
+            $table->date('date')->useCurrent();
+            $table->time('time_in')->useCurrent();
+            $table->time('time_out')->useCurrent();
+            $table->time('lunch_start')->useCurrent();
+            $table->time('lunch_end')->useCurrent();
+            $table->nullableTimestamps();
         });
     }
 
