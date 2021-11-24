@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     use HasFactory;
-        public static function newEmployee($data)
+
+    public static function newEmployee($data)
     {
         $employee = new static;
         $employee->fill($data);

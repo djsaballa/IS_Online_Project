@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Timesheet extends Model
 {
     use HasFactory;
+
     public static function newTimesheet($data)
     {
         $timesheet = new static;

@@ -20,7 +20,7 @@ class CreateTimesheetsTable extends Migration
             $table->time('time_out')->useCurrent();
             $table->time('lunch_start')->useCurrent();
             $table->time('lunch_end')->useCurrent();
-            $table->nullableTimestamps();
+            $table->timestamps();
         });
     }
 
