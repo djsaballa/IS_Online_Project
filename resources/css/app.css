@@ -7,46 +7,47 @@
     background-size: cover;
   }
 
-  #login-card{
-      width: 400px;
-      border-radius: 15px;
-      margin: 100px auto;
-    
+#login-card{
+    width: 400px;
+    border-radius: 15px;
+    margin: 100px auto;
   }
   
-  #email{
-      border-radius: 2px;
-      background-color: #FFF;
-      border-color: #7BB9FA;
+#email{
+    border-radius: 2px;
+    background-color: #FFF;
+    border-color: #7BB9FA;
   }
   
   
-  #btn{
-     position: absolute;
-     padding: 5px;
-     margin: auto;
-     align-items: center;
-     border-radius: 5px;
+#btn{
+    position: absolute;
+    padding: 5px;
+    margin: auto;
+    align-items: center;
+    border-radius: 5px;
   }
   
-  h1, h5{
+h1, h5{
     color: #25438C;
   }
   
-  .logo {
+.logo {
     width: 250px;
     height: 220px;
     margin: 0 auto;
   }
-  .logo img{
+
+.logo img{
     width: 100%;
   }
   
-  .sub-title, .title{
+.sub-title, .title{
     text-align: center;
     color: #25438C;
   }
-  .title{
+
+.title{
     font-weight: bolder;
     font-size: 35px;
   }
