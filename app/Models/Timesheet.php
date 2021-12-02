@@ -18,4 +18,44 @@ class Timesheet extends Model
         }
         return false;
     }
+
+    protected $fillable = [
+        'employee_id',
+        'date',
+        'time_in',
+        'time_out',
+        'lunch_start',
+        'lunch_end'
+    ];
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getEmployeeId()
+    {
+        return $this->employee_id;
+    }
+
+    public function getTimeIn()
+    {
+        return $this->time_in;
+    }
+
+    public function getTimeOut()
+    {
+        return $this->time_out;
+    }
+
+    public function getLunchStart()
+    {
+        return $this->lunch_start;
+    }
+
+    public function getLunchEnd()
+    {
+        return $this->lunch_end;
+    }
+
 }
