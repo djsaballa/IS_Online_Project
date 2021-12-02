@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EmployeeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// ADMIN 
+Route::get('/admin', function () {
+    return view('/admin/login');
 });
+    // login auth
+    Route::post('/admin-login-auth', [AdminController::class, 'loginAuth'])->name('admin_login_auth');
+    // view employees
+    Route::get('/admin-view-employees', [AdminController::class, 'viewEmployees'])->name('admin_view_employees');
+
+
+// EMPLOYEE
+Route::get('/', function () {
+    return view('/employee/login');
+});
+     // login auth
+     Route::post('/employee-login-auth', [EmployeeController::class, 'loginAuth'])->name('employee_login_auth');
+     // view employees
+     Route::get('/employee-view-timesheets', [EmployeeController::class, 'viewTimesheets'])->name('employee_view_timesheets');
+
+
+
+
+

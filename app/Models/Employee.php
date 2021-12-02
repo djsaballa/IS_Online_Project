@@ -18,4 +18,31 @@ class Employee extends Model
         }
         return false;
     }
+
+    protected $table = 'employees';
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getLastName()
+    {
+        return $this->lastname;
+    }
+
+    public function getFirstName()
+    {
+        return $this->firstname;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
 }
