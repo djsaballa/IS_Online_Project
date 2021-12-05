@@ -1,0 +1,125 @@
+body {
+	background: #E5E5E5;
+	margin: 0;
+}
+
+h1, h5, th, #up, #admin {
+	font: 'Open Sans';
+	font-weight: bold;
+}
+
+h1 {
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+a , a:hover , a:focus {
+	color: inherit;
+	text-decoration: none;
+	transition: all 0.3s;
+	font-weight: 600;  
+}
+
+/* SideBar*/
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+.wrapper {
+	display: flex;
+	text-decoration: none;
+	transition: all 0.3s;
+}
+
+#sidebar {
+	min-width: 280px;
+	max-width: 280px;
+	background: #120A29;
+	color: #fff;
+	transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+	padding: 20px;
+	background: #120A29;
+}
+
+#sidebar ul.components {
+	padding: 20px 0;
+}
+
+#sidebar ul p {
+	color: #fff;
+	padding: 10px;
+}
+
+#sidebar ul li a {
+	padding: 10px;
+	font-size: 1.2em;
+	display: block;
+}
+
+#sidebar ul li a:hover {
+	color: #ffff;
+	background: #C4C4C4;	
+}
+
+#sidebar .logout {
+	margin-top: 220px;
+	padding: 10px;
+	font-size: 1.2em;
+}
+
+.btn {
+	color:black;
+	border-color: black;
+	background-color: unset !important;
+    color: unset !important;
+} 
+
+#content {
+	width: 100%;
+	min-height: 100vh;
+	transition: all 0.3s;
+}
+
+.logo {
+	width: 250px;
+	height: 220px;
+	margin-left:-15px;
+	margin-top: -30px;
+}
+
+.logo img {
+	width: 100%;
+	
+}
+
+.wrap {
+	height: 80%;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #ffff;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
