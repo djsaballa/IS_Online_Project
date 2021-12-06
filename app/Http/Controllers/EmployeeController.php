@@ -26,13 +26,13 @@ class EmployeeController extends Controller
             if($request->password != $login_info->password){
                 return back()->with('failPass','Incorrect password');
             }else{
-                return redirect(route('employee_view_timesheets'), compact('employee_id'));
+                return view('employee.view-timesheets', compact($employee_id));
             }
         }
     }
 
     // view timesheets
-    public function viewTimesheets()
+    public function viewTimesheets($employee_id)
     {
         return view('employee.view-timesheets');
     }
