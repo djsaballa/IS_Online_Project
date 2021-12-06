@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Styles -->
-    <link rel="stylesheet" href="/css/app.css" >
+    <link rel="stylesheet" href="{{url('css/app.css')}}">
   </head>
 
   <body id="body" style= "background-image: url(https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
