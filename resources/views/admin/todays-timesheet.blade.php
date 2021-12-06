@@ -84,46 +84,16 @@
               </tr>
             </thead>
             <tbody>
+              @foreach ($timesheets_today as $timesheet)
               <tr>
-                <td>November 1. 2021</td>
-                <td>Melrose Cortes</td>
-                <td>8:00 am</td>
-                <td>5:00 pm</td>
-                <td>12:00 pm</td>
-                <td>1:00 pm</td>
+                <td>{{ $timesheet->date }}</td>
+                <td>{{ $timesheet->getEmployeeName($timesheet->employee_id) }}</td>
+                <td>{{ $timesheet->time_in }}</td>
+                <td>{{ $timesheet->time_out }}</td>
+                <td>{{ $timesheet->lunch_start }}</td>
+                <td>{{ $timesheet->lunch_end }}</td>
               </tr>
-              <tr>
-                <td>November 1. 2021</td>
-                <td>Bless Catalan</td>
-                <td>8:00 am</td>
-                <td>5:00 pm</td>
-                <td>12:00 pm</td>
-                <td>1:00 pm</td>
-              </tr>
-              <tr>
-                <td>November 1. 2021</td>
-                <td>Jesa Viernes</td>
-                <td>8:00 am</td>
-                <td>5:00 pm</td>
-                <td>12:00 pm</td>
-                <td>1:00 pm</td>
-              </tr>
-              <tr>
-                <td>November 1. 2021</td>
-                <td>Daniel John Saballa</td>
-                <td>8:00 am</td>
-                <td>5:00 pm</td>
-                <td>12:00 pm</td>
-                <td>1:00 pm</td>
-              </tr>
-              <tr>
-                <td>November 1. 2021</td>
-                <td>Dave Sadsad</td>
-                <td>8:00 am</td>
-                <td>5:00 pm</td>
-                <td>12:00 pm</td>
-                <td>1:00 pm</td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
         </div>

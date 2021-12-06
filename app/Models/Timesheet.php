@@ -33,6 +33,11 @@ class Timesheet extends Model
         return $this->id;
     }
 
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class);
+    }
+
     public function getEmployeeId()
     {
         return $this->employee_id;
@@ -57,5 +62,13 @@ class Timesheet extends Model
     {
         return $this->lunch_end;
     }
+    
+    public function getEmployeeName($employee_id) 
+    {
+        $employee = Timesheet::employee()->where("id", "=", $employee_id)->first();
+        $first_name = $employee->firstname;
+        $last_name = $employee->lastname;
 
+        return $first_name. ' ' .$last_name;
+    }
 }
