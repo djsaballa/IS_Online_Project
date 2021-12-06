@@ -29,7 +29,6 @@ class EmployeeController extends Controller
                 return redirect(route('employee_view_timesheets'), compact('employee_id'));
             }
         }
-        // abbynormal@gmail.com 
     }
 
     // view timesheets

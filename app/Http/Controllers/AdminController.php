@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Employee;
 use App\Models\Timesheet;
+use Carbon\Carbon;
+
 
 class AdminController extends Controller
 {
@@ -34,5 +36,16 @@ class AdminController extends Controller
     public function viewEmployees()
     {
         return view('admin.view-employees');
+    }
+
+    // todays timesheets
+    public function todaysTimesheet()
+    {  
+        $today = Carbon::now()->format("Y-m-d");
+        $timesheets_today = Timesheet::where('date', "=", $today)->get(); 
+
+        // var_dump($timesheets_today);
+
+        return view(('admin.todays-timesheet'), compact('timesheets_today'));
     }
 }
