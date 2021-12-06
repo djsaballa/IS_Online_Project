@@ -44,8 +44,6 @@ class AdminController extends Controller
         $today = Carbon::now()->format("Y-m-d");
         $timesheets_today = Timesheet::where('date', "=", $today)->get(); 
 
-        // var_dump($timesheets_today);
-
         return view(('admin.todays-timesheet'), compact('timesheets_today'));
     }
 }
