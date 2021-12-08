@@ -115,7 +115,21 @@ a , a:hover , a:focus {
     }
 }
 
+table{
+    text-align: center;
+}
 
+button{
+    padding: 3px;
+    margin:5px;
+    border-radius: 5px;
+}
+
+img{
+    border-radius: 50%;
+    height: 100; 
+    width :80px;
+}
 
 
 
