@@ -30,20 +30,20 @@
           </div>
           <h5 style="text-align: center;">Admin Attendance Management System</h5>
         </div>
-        
+
         <ul class="lisst-unstyled components">
           <li>
-            <a href="#View Employees" >
+            <a href="{{ route('admin_view_employees') }}" >
             <span><i class="fas fa-users" style="margin-left:30px;"></i></span> View Employees</a>
           </li>
           <li>
-            <a href="#Today's Timesheet">
+            <a href="{{ route('admin_todays_timesheet') }}">
             <span><i class="fas fa-calendar-day" style="margin-left:30px;"></i></span> Today's Timesheet</a>
           </li>
         </ul>
         <div class="sidebar-bottom">	
           <div class="logout">
-            <a href="#Logout">
+            <a href="/admin/login">
             <i class="fas fa-sign-out-alt" style="margin-left:30px; "></i> Logout</a>
           </div>
         </div>
@@ -70,7 +70,7 @@
 
         <div class="wrap">
 
-          <h1>Melrose Cortes</h1>
+          <h1>{{ $employee_info->getFirstLast() }}'s Timesheets</h1>
           
           <table id="table_id" class="display table">
             <thead>
@@ -84,25 +84,16 @@
             </thead>
 
             <tbody>
+              @foreach ($employee_timesheets as $employee_timesheet)
               <tr>
-                <td>November 1, 2021</td>
-                <td>8:00 am</td>
-                <td>5:00 pm</td>
-                <td>12:00 pm</td>
-                <td>1:00 pm</td>
+                <td>{{ $employee_timesheet->date }}</td>
+                <td>{{ $employee_timesheet->time_in }}</td>
+                <td>{{ $employee_timesheet->time_out }}</td>
+                <td>{{ $employee_timesheet->lunch_start }}</td>
+                <td>{{ $employee_timesheet->lunch_end }}</td>
               </tr>
             </tbody>
-
-            <tbody>
-                <tr>
-                  <td>November 1, 2021</td>
-                  <td>8:00 am</td>
-                  <td>5:00 pm</td>
-                  <td>12:00 pm</td>
-                  <td>1:00 pm</td>
-                </tr>
-              </tbody>
-
+            @endforeach
           </table>
         </div>
       </div>

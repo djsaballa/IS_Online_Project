@@ -30,20 +30,20 @@
           </div>
           <h5 style="text-align: center;">Admin Attendance Management System</h5>
         </div>
-        
+
         <ul class="lisst-unstyled components">
           <li>
-            <a href="#View Employees" >
+            <a href="{{ route('admin_view_employees') }}" >
             <span><i class="fas fa-users" style="margin-left:30px;"></i></span> View Employees</a>
           </li>
           <li>
-            <a href="#Today's Timesheet">
+            <a href="{{ route('admin_todays_timesheet') }}">
             <span><i class="fas fa-calendar-day" style="margin-left:30px;"></i></span> Today's Timesheet</a>
           </li>
         </ul>
         <div class="sidebar-bottom">	
           <div class="logout">
-            <a href="#Logout">
+            <a href="/admin/login">
             <i class="fas fa-sign-out-alt" style="margin-left:30px; "></i> Logout</a>
           </div>
         </div>
@@ -77,45 +77,31 @@
               <tr>
                 <th></th>
                 <th>Name</th>
-                <th>Department</th>
                 <th>Email</th>
                 <th></th>
               </tr>
             </thead>
 
             <tbody>
+              @foreach ($employees as $employee)
               <tr>
-                <td><img src="https://image.freepik.com/free-photo/closeup-portrait-girl-employee-job-seeker_274222-25866.jpg" 
-                    alt="Italian Trulli"></td>
-                <td>Melrose Cortes</td>
-                <td>Finance</td>
-                <td>melrosecortes@gmail.com</td>
+                <td><img src="?" 
+                    alt="?"></td>
+                <td>{{ $employee->getLastFirst() }}</td>
+                <td>{{ $employee->email }}</td>
                 <td>
-                    <span id="button" style="margin-right: -50px;">
-                        <button type="button"  class="btnbtn btn-primary ">Change Password</button>
-                        <button type="button"  class="btnbtn btn-success">View Timesheet</button>
-                        
-                    </span>
-                 </td> 
+                  <span id="button" style="margin-right: -50px;">
+                    <a href="{{ route('admin_todays_timesheet', $employee->id) }}" class="btn btn-primary">
+                      Change Password
+                    </a>
+                    <a href="{{ route('admin_view_timesheets', $employee->id) }}" class="btnbtn btn-primary">
+                      View Timesheet
+                    </a>
+                  </span>
+                </td>
               </tr>
+              @endforeach
             </tbody>
-
-            <tbody>
-                <tr>
-                    <td><img src="https://t3.ftcdn.net/jpg/02/07/76/52/360_F_207765293_GsH0x7NRe1vjWxgqmMTOwerwXt8WHRpN.jpg" 
-                        alt="Italian Trulli"></td>
-                  <td>Bless Catalan</td>
-                  <td>Marketing</td>
-                  <td>blesscatalan@gmail.com</td>
-                  <td>
-                      <span id="button" style="margin-right: -50px;">
-                          <button type="button"  class="btnbtn btn-primary ">Change Password</button>
-                          <button type="button"  class="btnbtn btn-success">View Timesheet</button>
-                          
-                      </span>
-                   </td> 
-                </tr>
-              </tbody>
 
           </table>
         </div>
