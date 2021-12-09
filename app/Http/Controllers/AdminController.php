@@ -35,7 +35,16 @@ class AdminController extends Controller
     // view employees
     public function viewEmployees()
     {
-        return view('admin.view-employees');
+        $employees = Employee::all();
+        return view(('admin.view-employees'), compact('employees'));
+    }
+
+    // view timesheets
+    public function viewTimesheets($employee_id)
+    {
+        $employee_info = Employee::where('id', '=', $employee_id)->first();
+        $employee_timesheets = Timesheet::where('employee_id', $employee_id)->get();
+        return view(('admin.view-timesheets'), compact('employee_timesheets', 'employee_info'));
     }
 
     // todays timesheets

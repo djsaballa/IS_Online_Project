@@ -28,12 +28,22 @@ class Employee extends Model
 
     public function getLastName()
     {
-        return $this->lastname;
+        return $this->last_name;
     }
 
     public function getFirstName()
     {
-        return $this->firstname;
+        return $this->first_name;
+    }
+
+    public function getFirstLast()
+    {
+        return $this->first_name. " " .$this->last_name;
+    }
+
+    public function getLastFirst()
+    {
+        return $this->last_name. ", " .$this->first_name;
     }
 
     public function getEmail()

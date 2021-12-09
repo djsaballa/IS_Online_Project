@@ -33,17 +33,17 @@
         
         <ul class="lisst-unstyled components">
           <li>
-            <a href="#View Employees" >
+            <a href="{{ route('admin_view_employees') }}" >
             <span><i class="fas fa-users" style="margin-left:30px;"></i></span> View Employees</a>
           </li>
           <li>
-            <a href="#Today's Timesheet">
+            <a href="{{ route('admin_todays_timesheet') }}">
             <span><i class="fas fa-calendar-day" style="margin-left:30px;"></i></span> Today's Timesheet</a>
           </li>
         </ul>
         <div class="sidebar-bottom">	
           <div class="logout">
-            <a href="#Logout">
+            <a href="/admin/login">
             <i class="fas fa-sign-out-alt" style="margin-left:30px; "></i> Logout</a>
           </div>
         </div>

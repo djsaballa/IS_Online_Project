@@ -24,6 +24,8 @@ Route::get('/admin', function () {
     Route::post('/admin-login-auth', [AdminController::class, 'loginAuth'])->name('admin_login_auth');
     // view employees
     Route::get('/admin-view-employees', [AdminController::class, 'viewEmployees'])->name('admin_view_employees');
+    // view timesheets
+    Route::get('/admin-view-timesheets/{employee_id}', [AdminController::class, 'viewTimesheets'])->name('admin_view_timesheets');
     // today's timesheets
     Route::get('/admin-todays-timesheet', [AdminController::class, 'todaysTimesheet'])->name('admin_todays_timesheet');
 
