@@ -85,8 +85,8 @@
 
             <tbody>
               <tr>
-                <td><img src="https://image.freepik.com/free-photo/closeup-portrait-girl-employee-job-seeker_274222-25866.jpg" 
-                    alt="Italian Trulli"></td>
+                <td><img src="https://scontent.fsfs2-1.fna.fbcdn.net/v/t39.30808-6/240445837_3046023809013904_3199855958827020602_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeH9e9VpIp_HU29y6kXkrrMiu05BiTs6kWm7TkGJOzqRaXXNF9IF_VMa5mEsJ3jLxFLvVlDYJM6Fdb4WrKoh7qwm&_nc_ohc=GzzE0QgibbwAX81SsiH&_nc_ht=scontent.fsfs2-1.fna&oh=29736007a2925d645eac977bc52b8e72&oe=61B82B0D" 
+                  style="height:80px;  width:80px;"></td>
                 <td>Melrose Cortes</td>
                 <td>Finance</td>
                 <td>melrosecortes@gmail.com</td>
@@ -102,8 +102,8 @@
 
             <tbody>
                 <tr>
-                    <td><img src="https://t3.ftcdn.net/jpg/02/07/76/52/360_F_207765293_GsH0x7NRe1vjWxgqmMTOwerwXt8WHRpN.jpg" 
-                        alt="Italian Trulli"></td>
+                    <td><img src="https://scontent.fsfs2-1.fna.fbcdn.net/v/t1.6435-9/31880837_959001584277924_7350696975026618368_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=174925&_nc_eui2=AeEs9xrt6332M3mrHcQMzmBhfJk-ZuowaCp8mT5m6jBoKlStT6PGqgbkqA3hEdGVrsH8ebu6RX7y0jxyKUOePFwc&_nc_ohc=yZVC2ftPjHAAX-xA8hi&_nc_ht=scontent.fsfs2-1.fna&oh=f09e5022885d3b9f7655727b32c4875d&oe=61DAD584" 
+                      style="height:80px; width:80px;"></td>
                   <td>Bless Catalan</td>
                   <td>Marketing</td>
                   <td>blesscatalan@gmail.com</td>
