@@ -90,13 +90,20 @@
                 <td>{{ $employee->getLastFirst() }}</td>
                 <td>{{ $employee->email }}</td>
                 <td>
-                  <span id="button" style="margin-right: -50px;">
-                    <a href="{{ route('admin_todays_timesheet', $employee->id) }}" class="btn btn-primary">
+                  
+                  <span style="margin-right: -50px;">
+                   <a href="{{ route('admin_todays_timesheet', $employee->id) }}"  >
+                     <button class="btnbtn btn-primary " id="button">
                       Change Password
+                      <button>
                     </a>
-                    <a href="{{ route('admin_view_timesheets', $employee->id) }}" class="btnbtn btn-primary">
+                
+                   <a href="{{ route('admin_view_timesheets', $employee->id) }}" >
+                      <button  class="btnbtn btn-success" id="button" >
                       View Timesheet
+                      <button>
                     </a>
+
                   </span>
                 </td>
               </tr>

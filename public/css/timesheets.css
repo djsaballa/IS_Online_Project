@@ -115,6 +115,24 @@ a , a:hover , a:focus {
     }
 }
 
+#table_id{
+    text-align: center;
+}
+
+#button {
+    padding: 8px;
+	margin: 10px;
+    border-radius: 5px;
+}
+tr { 
+	height: 50px;
+	margin: 0 auto;
+	align-items: center;
+}
+
+
+
+
 
 
 
