@@ -19,7 +19,12 @@ class Employee extends Model
         return false;
     }
 
-    protected $table = 'employees';
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+    ];
 
     public function getId()
     {
