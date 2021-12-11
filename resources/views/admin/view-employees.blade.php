@@ -68,6 +68,14 @@
 
         <br><br>
 
+        @if (Session::has('alert-successful'))
+            <div class="alert alert-success" role="alert" style="text-align:center;">{!! Session::get('alert-successful') !!}</div>
+        @endif
+
+        @if (Session::has('alert-unsuccessful'))
+            <div class="alert alert-danger" role="alert" style="text-align:center;">{!! Session::get('alert-unsuccessful') !!}</div>
+        @endif
+
         <div class="wrap">
 
           <h1>List Of Employees</h1>
@@ -92,17 +100,17 @@
                 <td>
                   
                   <span style="margin-right: -50px;">
-                   <a href="{{ route('admin_todays_timesheet', $employee->id) }}"  >
+                   <a href="{{ route('admin_change_password', $employee->id) }}"  >
                      <button class="btnbtn btn-primary " id="button">
                       Change Password
-                      <button>
-                    </a>
+                     </button>
+                   </a>
                 
                    <a href="{{ route('admin_view_timesheets', $employee->id) }}" >
-                      <button  class="btnbtn btn-success" id="button" >
+                     <button  class="btnbtn btn-success" id="button" >
                       View Timesheet
-                      <button>
-                    </a>
+                     </button>
+                   </a>
 
                   </span>
                 </td>

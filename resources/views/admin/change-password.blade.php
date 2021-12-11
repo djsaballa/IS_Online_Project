@@ -20,32 +20,32 @@
 
     <div class="wrapper">
 
-      <nav id="sidebar">
+    <nav id="sidebar">
 
-        <div class="sidebar-header">
-          <div class="logo">
-            <img class="text-center" src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t1.15752-9/262305527_426710942357529_7743025437953405122_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeEgv9Cm0JpyYTnYeLC-R2zHDIETr2mh02QMgROvaaHTZFI_uaU6uazdUddTvkmhKGk&_nc_ohc=QkeCIfvR54AAX_NyBQL&_nc_ht=scontent.fmnl9-3.fna&oh=7fd81b0deea6d100b1b480514230c18e&oe=61CDCBD3" alt="My test image">
-          </div>
-          <h5 style="text-align: center;">Admin Attendance Management System</h5>
+      <div class="sidebar-header">
+        <div class="logo">
+          <img class="text-center" src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t1.15752-9/262305527_426710942357529_7743025437953405122_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeEgv9Cm0JpyYTnYeLC-R2zHDIETr2mh02QMgROvaaHTZFI_uaU6uazdUddTvkmhKGk&_nc_ohc=QkeCIfvR54AAX_NyBQL&_nc_ht=scontent.fmnl9-3.fna&oh=7fd81b0deea6d100b1b480514230c18e&oe=61CDCBD3" alt="My test image">
         </div>
-        
-        <ul class="lisst-unstyled components">
-          <li>
-            <a href="#View Employees" >
-            <span><i class="fas fa-users" style="margin-left:30px;"></i></span> View Employees</a>
-          </li>
-          <li>
-            <a href="#Today's Timesheet">
-            <span><i class="fas fa-calendar-day" style="margin-left:30px;"></i></span> Today's Timesheet</a>
-          </li>
-        </ul>
-        <div class="sidebar-bottom">	
-          <div class="logout">
-            <a href="#Logout">
-            <i class="fas fa-sign-out-alt" style="margin-left:30px; "></i> Logout</a>
-          </div>
+        <h5 style="text-align: center;">Admin Attendance Management System</h5>
+      </div>
+
+      <ul class="lisst-unstyled components">
+        <li>
+          <a href="{{ route('admin_view_employees') }}" >
+          <span><i class="fas fa-users" style="margin-left:30px;"></i></span> View Employees</a>
+        </li>
+        <li>
+          <a href="{{ route('admin_todays_timesheet') }}">
+          <span><i class="fas fa-calendar-day" style="margin-left:30px;"></i></span> Today's Timesheet</a>
+        </li>
+      </ul>
+      <div class="sidebar-bottom">	
+        <div class="logout">
+          <a href="/admin/login">
+          <i class="fas fa-sign-out-alt" style="margin-left:30px; "></i> Logout</a>
         </div>
-      </nav>
+      </div>
+    </nav>
 
       <div id="content">
 
@@ -72,16 +72,24 @@
                 <div > 
                     <span  style="color:white; font-weight: 500; font-size:larger;">Change Password</span>
                 </div>
+                @foreach ($errors->all() as $error)
+                  <li class="text-danger text-md-center">{{ $error }}</li>
+                @endforeach 
                 <div class="form">
-                    <form >
+                    <form method="POST" action="{{ route('admin_update_password') }}">
+                      @csrf
+                      <input type="hidden" id="employee_id" name="employee_id" value="{{ $employee_info->getId() }}">
+
                         <div class="form-group">
-                        <label for="fname" style="font-weight: bold;">New Password:</label>
-                        <input type="username" class="form-control" id="password"  name="username">
-                        
+                          <label for="fname" style="font-weight: bold;">Name: {{ $employee_info->getFirstLast() }}</label>
                         </div>
                         <div class="form-group">
-                            <label for="fname" style="font-weight: bold;">Confirm Password:</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                          <label for="fname" style="font-weight: bold;">New Password:</label>
+                          <input type="username" class="form-control" id="new_password"  name="new_password">
+                        </div>
+                        <div class="form-group">
+                          <label for="fname" style="font-weight: bold;">Confirm Password:</label>
+                          <input type="password" class="form-control" id="new_confirm_password" name="new_confirm_password">
                         </div>
                         <button type="submit" id="button" class="btn btn-primary btn-block ">Update Password</button>
                            
