@@ -91,7 +91,7 @@
                           <label for="fname" style="font-weight: bold;">Confirm Password:</label>
                           <input type="password" class="form-control" id="new_confirm_password" name="new_confirm_password">
                         </div>
-                        <button type="submit" id="button" class="btn btn-primary btn-block ">Update Password</button>
+                        <button type="submit" id="button" class="btn btn-primary btn-block " >Update Password</button>
                            
                     </form>
                 </div>
