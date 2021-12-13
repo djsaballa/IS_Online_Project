@@ -87,7 +87,7 @@
               @foreach ($timesheets_today as $timesheet)
               <tr>
                 <td>{{ $timesheet->date }}</td>
-                <td>{{ $timesheet->getEmployeeName($timesheet->employee_id) }}</td>
+                <td>{{ $timesheet->employee->getFirstLast($timesheet->employee_id) }}</td>
                 <td>{{ $timesheet->time_in }}</td>
                 <td>{{ $timesheet->time_out }}</td>
                 <td>{{ $timesheet->lunch_start }}</td>
