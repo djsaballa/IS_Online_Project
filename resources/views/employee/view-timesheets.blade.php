@@ -33,17 +33,17 @@
         
         <ul class="lisst-unstyled components">
           <li>
-            <a href="{{ route('admin_view_employees') }}" >
+            <a href="{{ route('employee_take_attendance', $employee_info->id) }}" >
             <span><i class="fas fa-user-clock" style="margin-left:30px;"></i></span> Take Attendance</a>
           </li>
           <li>
-            <a href="{{ route('admin_todays_timesheet') }}">
+            <a href="{{ route('employee_view_timesheets', $employee_info->id) }}">
             <span><i class="fas fa-calendar-week" style="margin-left:30px; width: 10px; margin-right:10px;"></i></span> View Timesheets</a>
           </li>
         </ul>
         <div class="sidebar-bottom">	
           <div class="logout">
-            <a href="/admin/login">
+            <a href="/">
             <i class="fas fa-sign-out-alt" style="margin-left:30px; "></i> Logout</a>
           </div>
         </div>
@@ -60,13 +60,21 @@
               <span style="margin-left:-450px;"><i class="far fa-calendar-alt" style="margin-right:5px; font-size:19px"></i></span>View Timesheets</a>
             </div>	
             <div id="admin">
-              <span> Melrose Cortes </span> <img style="width:50px; height:30px; " src="https://image.pngaaa.com/583/3999583-middle.png" 
+              <span> {{ $employee_info->getFirstLast() }} </span> <img style="width:50px; height:30px; " src="https://image.pngaaa.com/583/3999583-middle.png" 
                 alt="Avatar">
             </div>
           </div>
         </nav>
 
         <br><br>
+        
+        @if (Session::has('alert-successful'))
+            <div class="alert alert-success" role="alert" style="text-align:center;">{!! Session::get('alert-successful') !!}</div>
+        @endif
+
+        @if (Session::has('alert-unsuccessful'))
+            <div class="alert alert-danger" role="alert" style="text-align:center;">{!! Session::get('alert-unsuccessful') !!}</div>
+        @endif
 
         <div class="wrap">
 
@@ -84,25 +92,16 @@
             </thead>
 
             <tbody>
+              @foreach ($employee_timesheets as $employee_timesheet)
               <tr>
-                <td>November 1, 2021</td>
-                <td>8:00 am</td>
-                <td>5:00 pm</td>
-                <td>12:00 pm</td>
-                <td>1:00 pm</td>
+                <td>{{ $employee_timesheet->date }}</td>
+                <td>{{ $employee_timesheet->time_in }}</td>
+                <td>{{ $employee_timesheet->time_out }}</td>
+                <td>{{ $employee_timesheet->lunch_start }}</td>
+                <td>{{ $employee_timesheet->lunch_end }}</td>
               </tr>
+              @endforeach
             </tbody>
-
-            <tbody>
-                <tr>
-                  <td>November 1, 2021</td>
-                  <td>8:00 am</td>
-                  <td>5:00 pm</td>
-                  <td>12:00 pm</td>
-                  <td>1:00 pm</td>
-                </tr>
-              </tbody>
-
           </table>
         </div>
       </div>

@@ -14,6 +14,7 @@ class CreateTimesheetsTable extends Migration
     public function up()
     {
         Schema::create('timesheets', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('employee_id')->constrained('employees')->onUpdate('cascade')->onDelete('cascade');
             $table->date('date')->nullable();
             $table->time('time_in')->nullable();

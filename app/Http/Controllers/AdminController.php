@@ -100,7 +100,7 @@ class AdminController extends Controller
     // todays timesheets
     public function todaysTimesheet()
     {  
-        $today = Carbon::now()->format("Y-m-d");
+        $today = Carbon::now('Asia/Manila')->format("Y-m-d");
         $timesheets_today = Timesheet::where('date', "=", $today)->get(); 
 
         return view(('admin.todays-timesheet'), compact('timesheets_today'));

@@ -31,17 +31,17 @@
           
           <ul class="lisst-unstyled components">
             <li>
-              <a href="{{ route('admin_view_employees') }}" >
+              <a href="{{ route('employee_take_attendance', $employee_info->id) }}" >
               <span><i class="fas fa-user-clock" style="margin-left:30px;"></i></span> Take Attendance</a>
             </li>
             <li>
-              <a href="{{ route('admin_todays_timesheet') }}">
+              <a href="{{ route('employee_view_timesheets', $employee_info->id) }}">
               <span><i class="fas fa-calendar-week" style="margin-left:30px; width: 10px; margin-right:10px;"></i></span> View Timesheets</a>
             </li>
           </ul>
           <div class="sidebar-bottom">	
             <div class="logout">
-              <a href="/admin/login">
+              <a href="/">
               <i class="fas fa-sign-out-alt" style="margin-left:30px; "></i> Logout</a>
             </div>
           </div>
@@ -58,7 +58,7 @@
               <span style="margin-left:-450px;"><i class="fas fa-user-clock" style="margin-right:5px; font-size:19px"></i></span>Take Attendance</a>
             </div>	
             <div id="admin">
-              <span> Melrose Cortes </span> <img style="width:50px; height:30px; " src="https://image.pngaaa.com/583/3999583-middle.png" 
+            <span> {{ $employee_info->getFirstLast() }} </span> <img style="width:50px; height:30px; " src="https://image.pngaaa.com/583/3999583-middle.png" 
                 alt="Avatar">
             </div>
           </div>
@@ -66,36 +66,53 @@
 
         <br><br>
 
-          
         <div class="wrap">
-            <h1>Saturday, December 12, 2021</h1>     
+            <h1>{{ $today }}</h1>     
             <div style="margin-left: 100px;" id="input">
               <h5 style="text-align: left; margin-top: 20px; margin-bottom: 10px;">Start Working</h5>
               <span style="margin-left:20px;">
-                <button type="button" class="btn btn-primary"  style="margin-left:12px;">Clock in</button>
-                <button type="button" class="btn btn-success"  style="margin-left:12px;">Clock out</button>
-              </span>
-              <span class="left" style="margin-left: 150px;">
-                <input type="time" id="timepicker1" >
-                <input type="time" id="timepicker2" >
+                <form method="POST" action="{{ route('employee_time_in', $employee_info->id) }}">
+                @csrf
+
+                  <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_info->id }}">
+                  <button type="submit" class="btn btn-primary"  style="margin-left:12px;">Time in</button>
+                  <input type="time" id="timepicker1" value="{{ $timesheet->time_in ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center;" disabled>
+                </form>
+
+                <form method="POST" action="{{ route('employee_time_out', $employee_info->id) }}">
+                @csrf
+
+                  <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_info->id }}">
+                  <button type="submit" class="btn btn-success"  style="margin-left:12px;">Time out</button>
+                  <input type="time" id="timepicker2" value="{{ $timesheet->time_out ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center;" disabled>
+                </form>
               </span>
             </div>
 
             <div style="margin-left: 100px;" id="input1">
               <h5 style="text-align: left; margin-top: 30px; margin-bottom: 10px;">Lunch Break</h5>
               <span id="span" style="margin-left:20px;"></span>
-                <button type="button" class="btn btn-primary" style="margin-left:8px;">Lunch in</button>
-                <button type="button" class="btn btn-success"  style="margin-left:8px;">Lunch out</button>
-            </span>
-              <span class="left" style="margin-left: 150px;">
-                <input type="time" id="timepicker3" >
-                <input type="time" id="timepicker4" >
-              </span>
-          </div>
+                <form method="POST" action="{{ route('employee_lunch_start', $employee_info->id) }}">
+                @csrf
 
+                  <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_info->id }}">
+                  <button type="submit" class="btn btn-primary" style="margin-left:8px;">Start Lunch</button>
+                  <input type="time" id="timepicker3" value="{{ $timesheet->lunch_start ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center;" disabled>
+                </form>
+
+                <form method="POST" action="{{ route('employee_lunch_end', $employee_info->id) }}">
+                @csrf
+
+                  <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_info->id }}">
+                  <button type="submit" class="btn btn-success"  style="margin-left:8px;">End Lunch</button>
+                  <input type="time" id="timepicker4" value="{{ $timesheet->lunch_end ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center;" disabled>
+                </form>
+              </span>
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
 
       <script>
 

@@ -39,9 +39,17 @@ Route::get('/', function () {
      // login auth
      Route::post('/employee-login-auth', [EmployeeController::class, 'loginAuth'])->name('employee_login_auth');
      // view employees
-     Route::get('/employee-view-timesheets', [EmployeeController::class, 'viewTimesheets'])->name('employee_view_timesheets');
-
-
+     Route::get('/employee-view-timesheets/{employee_id}', [EmployeeController::class, 'viewTimesheets'])->name('employee_view_timesheets');
+     // take attendance
+     Route::get('/employee-take-attendance/{employee_id}', [EmployeeController::class, 'takeAttendance'])->name('employee_take_attendance');
+        // time in
+        Route::post('/employee-time-in/{employee_id}', [EmployeeController::class, 'publishTimeIn'])->name('employee_time_in');
+        // time out
+        Route::post('/employee-time-out/{employee_id}', [EmployeeController::class, 'publishTimeOut'])->name('employee_time_out');
+        // lunch start
+        Route::post('/employee-lunch-start/{employee_id}', [EmployeeController::class, 'publishLunchStart'])->name('employee_lunch_start');
+        // lunch end
+        Route::post('/employee-lunch-end/{employee_id}', [EmployeeController::class, 'publishLunchEnd'])->name('employee_lunch_end');
 
 
 

@@ -92,8 +92,8 @@
                 <td>{{ $employee_timesheet->lunch_start }}</td>
                 <td>{{ $employee_timesheet->lunch_end }}</td>
               </tr>
+              @endforeach
             </tbody>
-            @endforeach
           </table>
         </div>
       </div>
