@@ -120,8 +120,8 @@ a , a:hover , a:focus {
 }
 
 #button {
-    padding: 8px;
-	margin: 10px;
+    padding: 5px;
+	margin:10px;
     border-radius: 5px;
 }
 tr { 
@@ -130,8 +130,35 @@ tr {
 	align-items: center;
 }
 
+a button:hover{
+	border-color: #ffffff;
+	}
 
+@media all and (max-width:1110px){
+	a button{
+	display:block;
+	margin:auto;
+	}
+	}
 
+@media (max-width:1238px){
+	a button{
+	display:block;
+	margin:auto ;
+	}
+	}
+
+@media (max-width:1250px){
+	div#up{
+	margin-left: 300px;
+	}
+	}
+
+@media (max-width:1120px){
+	div#up{
+	margin-left: 400px;
+	}
+	}
 
 
 
