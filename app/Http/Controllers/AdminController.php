@@ -97,6 +97,19 @@ class AdminController extends Controller
         return view(('admin.view-timesheets'), compact('employee_timesheets', 'employee_info'));
     }
 
+    // delete timesheet
+    public function deleteTimesheet(Request $request)
+    {
+        $delete = Timesheet::find($request->id)->delete();   
+        if ($delete) {
+            Session::flash('succesful-deletion', 'Timesheet has been successfully deleted.');
+            return response()->json("success");
+        } else {
+            Session::flash('unsuccesful-deletion', 'An error has occurred, timesheet has not been deleted.');
+            return response()->json("no success");
+        }
+    }
+
     // todays timesheets
     public function todaysTimesheet()
     {  

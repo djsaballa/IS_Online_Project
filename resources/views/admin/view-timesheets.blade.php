@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<title>Hima Corps Inc. | Attendance Management System</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -66,7 +67,17 @@
           </div>
         </nav>
 
-        <br><br>
+        <br>
+
+        @if (Session::has('succesful-deletion'))
+            <div class="alert alert-success" role="alert" style="text-align:center;">{!! Session::get('succesful-deletion') !!}</div>
+        @endif
+
+        @if (Session::has('unsuccesful-deletion'))
+            <div class="alert alert-danger" role="alert" style="text-align:center;">{!! Session::get('unsuccesful-deletion') !!}</div>
+        @endif
+
+        <br>
 
         <div class="wrap">
 
@@ -93,13 +104,16 @@
                 <td>{{ $employee_timesheet->lunch_end }}</td>
                 <td>{{ $employee_timesheet->time_out }}</td>
                 <td>
-                    <a href="{{ route('admin_edit_timesheet', $employee_timesheet->id) }}" onClick="getTimesheetId( {{ $employee_timesheet->id }} )" class="btn btn-info">
-                    Edit
-                    </a>
-                    /
-                    <a href="#" onClick="getTimesheetId( {{ $employee_timesheet->id }} )" class="btn btn-danger"  data-toggle="modal" data-target="#deleteConfirmation">
-                    Delete
-                    </a>
+                  <a href="{{ route('admin_edit_timesheet', $employee_timesheet->id) }}" onClick="getTimesheetId( {{ $employee_timesheet->id }} )">
+                    <button  class="btnbtn btn-primary" id="button" >
+                      Edit
+                     </button>
+                  </a>
+                  <a href="#" onClick="getTimesheetId( {{ $employee_timesheet->id }} )"  data-toggle="modal" data-target="#deleteConfirmation">
+                    <button  class="btnbtn btn-danger" id="button" >
+                      Delete
+                     </button>
+                  </a>
                 </td>
               </tr>
               @endforeach
@@ -108,21 +122,77 @@
         </div>
       </div>
     </div>
-
-      <script>
-
-        $(document).ready(function () {
-          $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-          });
+    <form method="POST" id="deleteTimesheetForm" onSubmit="console.log('test'); return false">
+      @csrf
+        <div class="modal fade" id="deleteConfirmation" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteConfirmationLongTitle">Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <input type="hidden" id="timesheetID">
+                <div class="modal-body">
+                    Are you sure you want to delete this timesheet?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btnbtn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <input id="onDelete" type="submit" value="Delete" class="btnbtn btn-danger"></input>
+                </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+      $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
         });
+      });
 
-        $(document).ready( function () {
-            $('#table_id').DataTable();
-        } );
-
-      </script>
-
+      $(document).ready( function () {
+          $('#table_id').DataTable();
+      } );
+    </script>
+    <script>
+    function getTimesheetId(id, employee_id) {
+        $("#timesheetID").val(id);
+    }
+    $(document).ready(function(){
+        jQuery('#table_id').DataTable();
+        const csrfToken = jQuery('meta[name="csrf-token"]').attr('content');
+        const loginToken = jQuery('meta[name="login-token"]').attr('content');
+        const xhrHeaders = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest',
+            'Authorization' : 'Bearer ' + loginToken, 
+            'X-CSRF-Token': csrfToken
+        };    
+        $('#deleteTimesheetForm').on('submit', function(e) {
+            var timesheetId = $("#timesheetID").val();
+            fetch("../admin-delete-timesheet", {
+                method: "POST",
+                credentials: "same-origin",
+                headers: xhrHeaders,
+                body: JSON.stringify({id: timesheetId})
+            }).then(response => {
+                if (response.ok) {
+                    response.json().then(json => {
+                        console.log(json)
+                        location.reload()
+                    });
+                } 
+                else throw response.statusText + " " + response.status;
+            }).catch(err => {
+                console.log(err)
+            });
+            console.log(timesheetId);
+            event.preventDefault();
+        });
+    });
+    </script> 
   </body>
-
 </html>
