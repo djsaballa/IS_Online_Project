@@ -84,6 +84,9 @@
                           <label for="fname" style="font-weight: bold;">Name: {{ $employee_info->getFirstLast() }}</label>
                         </div>
                         <div class="form-group">
+                          <label for="fname" style="font-weight: bold;">Email: {{ $employee_info->getEmail() }}</label>
+                        </div>
+                        <div class="form-group">
                           <label for="fname" style="font-weight: bold;">New Password:</label>
                           <input type="username" class="form-control" id="new_password"  name="new_password">
                         </div>
