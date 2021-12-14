@@ -78,9 +78,9 @@
                 <th>Date </th>
                 <th>Name</th>
                 <th>Time in</th>
-                <th>Time out</th>
                 <th>Lunch Start</th>
                 <th>Lunch End</th>
+                <th>Time out</th>
               </tr>
             </thead>
             <tbody>
@@ -89,9 +89,9 @@
                 <td>{{ $timesheet->date }}</td>
                 <td>{{ $timesheet->employee->getFirstLast($timesheet->employee_id) }}</td>
                 <td>{{ $timesheet->time_in }}</td>
-                <td>{{ $timesheet->time_out }}</td>
                 <td>{{ $timesheet->lunch_start }}</td>
                 <td>{{ $timesheet->lunch_end }}</td>
+                <td>{{ $timesheet->time_out }}</td>
               </tr>
               @endforeach
             </tbody>
