@@ -28,22 +28,22 @@
           <div class="logo">
             <img class="text-center" src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t1.15752-9/262305527_426710942357529_7743025437953405122_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeEgv9Cm0JpyYTnYeLC-R2zHDIETr2mh02QMgROvaaHTZFI_uaU6uazdUddTvkmhKGk&_nc_ohc=QkeCIfvR54AAX_NyBQL&_nc_ht=scontent.fmnl9-3.fna&oh=7fd81b0deea6d100b1b480514230c18e&oe=61CDCBD3" alt="My test image">
           </div>
-          <h5 style="text-align: center;">Attendance Management System</h5>
+          <h5 style="text-align: center;"> Attendance Management System</h5>
         </div>
-
+        
         <ul class="lisst-unstyled components">
           <li>
-            <a href="{{ route('admin_view_employees') }}" >
-            <span><i class="fas fa-users" style="margin-left:30px;"></i></span> View Employees</a>
+            <a href="{{ route('employee_take_attendance', $employee_info->id) }}" >
+            <span><i class="fas fa-user-clock" style="margin-left:30px;"></i></span> Take Attendance</a>
           </li>
           <li>
-            <a href="{{ route('admin_todays_timesheet') }}">
-            <span><i class="fas fa-calendar-day" style="margin-left:30px;"></i></span> Today's Timesheet</a>
+            <a href="{{ route('employee_view_timesheets', $employee_info->id) }}">
+            <span><i class="fas fa-calendar-week" style="margin-left:30px; width: 10px; margin-right:10px;"></i></span> View Timesheets</a>
           </li>
         </ul>
         <div class="sidebar-bottom">	
           <div class="logout">
-            <a href="/admin/login">
+            <a href="/">
             <i class="fas fa-sign-out-alt" style="margin-left:30px; "></i> Logout</a>
           </div>
         </div>
@@ -57,71 +57,17 @@
               <i class="fa fa-align-left"></i>
             </button>
             <div id="up">
-              <span style="margin-left:-450px;"><i class="fas fa-user-friends" style="margin-right:5px; font-size:19px"></i></span>View Employees</a>
+              <span style="margin-left:-450px;"><i class="far fa-calendar-alt" style="margin-right:5px; font-size:19px"></i></span>View Timesheets</a>
             </div>	
             <div id="admin">
-              <span> Administrator </span> <img style="width:25px; height:25px; " src="https://png.pngitem.com/pimgs/s/4-40070_user-staff-man-profile-user-account-icon-jpg.png" 
+              <span> {{ $employee_info->getFirstLast() }} </span> <img style="width:50px; height:30px; " src="https://image.pngaaa.com/583/3999583-middle.png" 
                 alt="Avatar">
             </div>
           </div>
         </nav>
 
-        <br><br>
-
-        @if (Session::has('alert-successful'))
-            <div class="alert alert-success" role="alert" style="text-align:center;">{!! Session::get('alert-successful') !!}</div>
-        @endif
-
-        @if (Session::has('alert-unsuccessful'))
-            <div class="alert alert-danger" role="alert" style="text-align:center;">{!! Session::get('alert-unsuccessful') !!}</div>
-        @endif
-
-        <div class="wrap">
-
-          <h1>List Of Employees</h1>
-          
-          <table id="table_id" class="display table">
-            <thead>
-              <tr>
-                <th>&nbsp;</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>&nbsp;</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              @foreach ($employees as $employee)
-              <tr>
-                <td><img src="?" 
-                    alt="?"></td>
-                <td>{{ $employee->getLastFirst() }}</td>
-                <td>{{ $employee->email }}</td>
-                <td>
-                  
-                  <span style="margin-right: -50px;">
-                   <a href="{{ route('admin_change_password', $employee->id) }}"  >
-                     <button class="btnbtn btn-primary " id="button">
-                      Change Password
-                     </button>
-                   </a>
-                
-                   <a href="{{ route('admin_view_timesheets', $employee->id) }}" >
-                     <button  class="btnbtn btn-success" id="button" >
-                      View Timesheet
-                     </button>
-                   </a>
-
-                  </span>
-                </td>
-              </tr>
-              @endforeach
-            </tbody>
-
-          </table>
-        </div>
-      </div>
-    </div>
+        
+       
 
       <script>
 

@@ -80,6 +80,7 @@
                 <th>Lunch Start</th>
                 <th>Lunch End</th>
                 <th>Time out</th>
+                <th>&nbsp;</th>
               </tr>
             </thead>
 
@@ -91,6 +92,15 @@
                 <td>{{ $employee_timesheet->lunch_start }}</td>
                 <td>{{ $employee_timesheet->lunch_end }}</td>
                 <td>{{ $employee_timesheet->time_out }}</td>
+                <td>
+                    <a href="{{ route('admin_edit_timesheet', $employee_timesheet->id) }}" onClick="getTimesheetId( {{ $employee_timesheet->id }} )" class="btn btn-info">
+                    Edit
+                    </a>
+                    /
+                    <a href="#" onClick="getTimesheetId( {{ $employee_timesheet->id }} )" class="btn btn-danger"  data-toggle="modal" data-target="#deleteConfirmation">
+                    Delete
+                    </a>
+                </td>
               </tr>
               @endforeach
             </tbody>
