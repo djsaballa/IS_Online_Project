@@ -76,7 +76,7 @@
                   
                   <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_info->id }}">
                   <button type="submit" class="btn btn-primary"  style=" margin-bottom: 15px;">Time in</button>
-                  <input type="time" id="timepicker1" value="{{ $timesheet->time_in ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center; width:250px; margin-left:60px; " disabled>
+                  <input  id="timepicker1" value="{{ $timesheet->time_in ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center; width:200px; margin-left:60px; " disabled>
                 </form>
 
                 <form method="POST" action="{{ route('employee_time_out', $employee_info->id) }}">
@@ -84,7 +84,7 @@
 
                   <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_info->id }}">
                   <button type="submit" class="btn btn-success"  style="margin-left:20px;">Time out</button>
-                  <input type="time" id="timepicker2" value="{{ $timesheet->time_out ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center; width:250px; " disabled>
+                  <input id="timepicker2" value="{{ $timesheet->time_out ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center; width:200px; " disabled>
                 </form>
               </span>
             </div>
@@ -97,7 +97,7 @@
 
                   <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_info->id }}">
                   <button type="submit" class="btn btn-primary" style=" margin-bottom: 15px;">Start Lunch</button>
-                  <input type="time" id="timepicker3" value="{{ $timesheet->lunch_start ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center; width:250px; margin-left:35px;" disabled>
+                  <input  id="timepicker3" value="{{ $timesheet->lunch_start ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center; width:200px; margin-left:35px;" disabled>
                 </form>
 
                 <form method="POST" action="{{ route('employee_lunch_end', $employee_info->id) }}">
@@ -105,7 +105,7 @@
 
                   <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_info->id }}">
                   <button type="submit" class="btn btn-success"  style="margin-left:20px;">End Lunch</button>
-                  <input type="time" id="timepicker4" value="{{ $timesheet->lunch_end ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center; width:250px; margin-left:40px;" disabled>
+                  <input  id="timepicker4" value="{{ $timesheet->lunch_end ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center; width:200px; margin-left:40px;" disabled>
                 </form>
               </span>
             </div>

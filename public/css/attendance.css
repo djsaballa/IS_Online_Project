@@ -142,29 +142,6 @@ a , a:hover , a:focus {
 	}
 	}
 
-#timepicker1:before {
-	content:'Clock in:';
-	margin-right:.6em;
-	padding-right:30px;
-	}
-
-#timepicker2:before {
-	content:'Clock out:';
-	margin-right:.6em;
-	padding-right:30px;
-	}
-
-#timepicker3:before {
-	content:'Lunch in:';
-	margin-right:.6em;
-	padding-right:30px;
-	}
-
-#timepicker4:before {
-	content:'Lunch out:';
-	margin-right:.6em;
-	padding-right:30px;
-	}
 
 form {
     display: inline-block;
@@ -173,7 +150,6 @@ form {
 input { 
 	display: inline;
 	float: right;
-
 	margin-left: 50px;
 	
 }
