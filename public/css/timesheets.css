@@ -72,6 +72,10 @@ a , a:hover , a:focus {
 	font-size: 1.2em;
 }
 
+.navbar {
+    height: 65px;
+}
+
 .btn {
 	color:black;
 	border-color: black;
@@ -98,7 +102,7 @@ a , a:hover , a:focus {
 }
 
 .wrap {
-	height: 80%;
+	height: auto;
 	margin-left: 20px;
 	margin-right: 20px;
 	padding-left: 20px;

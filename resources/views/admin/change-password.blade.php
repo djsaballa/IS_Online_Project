@@ -91,10 +91,12 @@
                           <input type="username" class="form-control" id="new_password"  name="new_password">
                         </div>
                         <div class="form-group">
-                          <label for="fname" style="font-weight: bold;">Confirm Password:</label>
+                          <label for="fname" style="font-weight: bold; margin-top:10px;">Confirm Password:</label>
                           <input type="password" class="form-control" id="new_confirm_password" name="new_confirm_password">
                         </div>
-                        <button type="submit" id="button" class="btn btn-primary btn-block " >Update Password</button>
+                        <br>
+                        <br>
+                        <button type="submit" id="button" class="btn btn-primary btn-block" >Update Password</button>
                            
                     </form>
                 </div>

@@ -110,18 +110,16 @@ a , a:hover , a:focus {
 	
 }
 .wrap {
-	height: 50%;
-	width: auto;
-	margin-top: 70px;
-	margin-left: 50px;
-	margin-right: 50px;
+	height: 70%;
+	margin: auto;
+	width: 70%;
+
 	padding-left: 20px;
 	padding-right: 20px;
 	background-color: #FFF;
 	border-radius: 10px;
 	
 }
-
 
 @media (max-width: 768px) {
     #sidebar {
@@ -154,7 +152,6 @@ a , a:hover , a:focus {
 	content:'Clock out:';
 	margin-right:.6em;
 	padding-right:30px;
-
 	}
 
 #timepicker3:before {
@@ -169,7 +166,17 @@ a , a:hover , a:focus {
 	padding-right:30px;
 	}
 
+form {
+    display: inline-block;
+}
 
+input { 
+	display: inline;
+	float: right;
+
+	margin-left: 50px;
+	
+}
 
 
 

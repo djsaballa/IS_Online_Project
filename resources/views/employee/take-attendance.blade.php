@@ -68,44 +68,44 @@
 
         <div class="wrap">
             <h1>{{ $today }}</h1>     
-            <div style="margin-left: 100px;" id="input">
-              <h5 style="text-align: left; margin-top: 20px; margin-bottom: 10px;">Start Working</h5>
+            <div style="margin-left: 200px;" id="input">
+              <h5 style="text-align: left; margin-top: 20px; margin-bottom: 20px;">Start Working</h5>
               <span style="margin-left:20px;">
                 <form method="POST" action="{{ route('employee_time_in', $employee_info->id) }}">
                 @csrf
-
+                  
                   <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_info->id }}">
-                  <button type="submit" class="btn btn-primary"  style="margin-left:12px;">Time in</button>
-                  <input type="time" id="timepicker1" value="{{ $timesheet->time_in ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center;" disabled>
+                  <button type="submit" class="btn btn-primary"  style=" margin-bottom: 15px;">Time in</button>
+                  <input type="time" id="timepicker1" value="{{ $timesheet->time_in ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center; width:250px; margin-left:60px; " disabled>
                 </form>
 
                 <form method="POST" action="{{ route('employee_time_out', $employee_info->id) }}">
                 @csrf
 
                   <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_info->id }}">
-                  <button type="submit" class="btn btn-success"  style="margin-left:12px;">Time out</button>
-                  <input type="time" id="timepicker2" value="{{ $timesheet->time_out ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center;" disabled>
+                  <button type="submit" class="btn btn-success"  style="margin-left:20px;">Time out</button>
+                  <input type="time" id="timepicker2" value="{{ $timesheet->time_out ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center; width:250px; " disabled>
                 </form>
               </span>
             </div>
 
-            <div style="margin-left: 100px;" id="input1">
-              <h5 style="text-align: left; margin-top: 30px; margin-bottom: 10px;">Lunch Break</h5>
+            <div style="margin-left: 200px;" id="input1">
+              <h5 style="text-align: left; margin-top: 30px; margin-bottom: 20px;">Lunch Break</h5>
               <span id="span" style="margin-left:20px;"></span>
                 <form method="POST" action="{{ route('employee_lunch_start', $employee_info->id) }}">
                 @csrf
 
                   <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_info->id }}">
-                  <button type="submit" class="btn btn-primary" style="margin-left:8px;">Start Lunch</button>
-                  <input type="time" id="timepicker3" value="{{ $timesheet->lunch_start ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center;" disabled>
+                  <button type="submit" class="btn btn-primary" style=" margin-bottom: 15px;">Start Lunch</button>
+                  <input type="time" id="timepicker3" value="{{ $timesheet->lunch_start ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center; width:250px; margin-left:35px;" disabled>
                 </form>
 
                 <form method="POST" action="{{ route('employee_lunch_end', $employee_info->id) }}">
                 @csrf
 
                   <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_info->id }}">
-                  <button type="submit" class="btn btn-success"  style="margin-left:8px;">End Lunch</button>
-                  <input type="time" id="timepicker4" value="{{ $timesheet->lunch_end ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center;" disabled>
+                  <button type="submit" class="btn btn-success"  style="margin-left:20px;">End Lunch</button>
+                  <input type="time" id="timepicker4" value="{{ $timesheet->lunch_end ?? '--:-- --' }}" style="background:#E5E4E2; text-align:center; width:250px; margin-left:40px;" disabled>
                 </form>
               </span>
             </div>
