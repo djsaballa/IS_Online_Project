@@ -70,51 +70,61 @@
         <div class="wrap">
           <h1>Edit Timesheet</h1> 
           <div class="form-center">
-              <form style="margin-left: 250px;"> 
+              <form method="POST" action="{{ route('admin_update_timesheet') }}" style="margin-left: 250px;"> 
+                @csrf
+                <input type="hidden" id="employeeId" name="employeeId" value="{{ $employee_id }}" >
+                <input type="hidden" id="timesheetId" name="timesheetId" value="{{ $timesheet_data->id }}" >
+
                   <div class="form-group row" >
-                    <label for="staticEmail" class="col-sm-2 col-form-label" style="font-weight: bold;">Email:</label>
+                    <label for="staticEmail" class="col-sm-2 col-form-label" style="font-weight: bold;">Name: </label>
                     <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="email" >
+                      <input type="text" readonly class="form-control-plaintext" id="name" name="name" value="{{ $employee_name }}" >
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Date</label>
                     <div class="col-sm-10">
-                      <input type="date" class="form-control" id="date" style="width:250px;"> 
+                      <input type="date" class="form-control" id="date" name="date" style="width:250px;" value="{{ $timesheet_data->date }}"> 
                     </div>
+                    <p class="error text-md-center" style="color: red;">@error('date'){{ $message }} @enderror</p>
                   </div>
 
                   <div class="form-group row">
                     <label  class="col-sm-2 col-form-label" style="font-weight: bold; ;">Time&nbsp;in</label>
                     <div class="col-sm-10">
-                      <input type="time" class="form-control" id="TimeIn"  style="width:250px; ">
+                      <input type="time" class="form-control" id="timeIn" name="timeIn" style="width:250px; " value="{{ $timesheet_data->time_in }}">
                     </div>
+                    <p class="error text-md-center" style="color: red;">@error('timeIn'){{ $message }} @enderror</p>
                   </div>
 
                   <div class="form-group row">
                     <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Lunch&nbsp;Start</label>
                     <div class="col-sm-10"> 
-                      <input type="time" class="form-control" id="lunchStart" style="width:250px; ">
+                      <input type="time" class="form-control" id="lunchStart" name="lunchStart" style="width:250px; " value="{{ $timesheet_data->lunch_start }}">
                     </div>
+                    <p class="error text-md-center" style="color: red;">@error('lunchStart'){{ $message }} @enderror</p>
                   </div>
 
                   <div class="form-group row">
                     <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Lunch&nbsp;End</label>
                     <div class="col-sm-10">
-                      <input type="time" class="form-control" id="lunchEnd" style="width:250px;">
+                      <input type="time" class="form-control" id="lunchEnd" name="lunchEnd" style="width:250px;" value="{{ $timesheet_data->lunch_end }}">
                     </div>
+                    <p class="error text-md-center" style="color: red;">@error('lunchEnd'){{ $message }} @enderror</p>
                   </div>
 
                   <div class="form-group row ">
                     <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Time&nbsp;out</label>
                     <div class="col-sm-10">
-                      <input type="time" class="form-control" id="TimeOut" style="width:250px;" >
+                      <input type="time" class="form-control" id="timeOut" name="timeOut" style="width:250px;" value="{{ $timesheet_data->time_out }}">
                     </div>
+                    <p class="error text-md-center" style="color: red;">@error('timeOut'){{ $message }} @enderror</p>
                   </div>
-                  <button type="button"  class="btn btn-Secondary button1 ">Cancel</button>
-                  <button type="button"  class="btn btn-primary button  ">Save</button>
-                  
+                  <a href="{{ route('admin_view_timesheets', $employee_id) }}">
+                    <button type="button"  class="btn btn-Secondary button1 ">Cancel</button>
+                  </a>
+                  <button type="submit"  class="btn btn-primary button  ">Save</button>
               </form>
             </div>
         </div>
