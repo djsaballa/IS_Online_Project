@@ -93,8 +93,8 @@
             <tbody>
               @foreach ($employees as $employee)
               <tr>
-                <td><img src="?" 
-                    alt="?"></td>
+                <td><img src="https://icon-library.com/images/person-flat-icon/person-flat-icon-23.jpg" 
+                    alt="employee" class="image"></td>
                 <td>{{ $employee->getLastFirst() }}</td>
                 <td>{{ $employee->email }}</td>
                 <td>
