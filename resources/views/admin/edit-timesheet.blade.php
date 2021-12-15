@@ -81,35 +81,35 @@
                   <div class="form-group row">
                     <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Date</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="date" style="width:250px;"> 
+                      <input type="date" class="form-control" id="date" style="width:250px;"> 
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label" style="font-weight: bold; ;">Time in</label>
+                    <label  class="col-sm-2 col-form-label" style="font-weight: bold; ;">Time&nbsp;in</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="TimeIn"  style="width:250px; ">
+                      <input type="time" class="form-control" id="TimeIn"  style="width:250px; ">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Lunch Start</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="lunchStart" style="width:250px; ">
+                    <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Lunch&nbsp;Start</label>
+                    <div class="col-sm-10"> 
+                      <input type="time" class="form-control" id="lunchStart" style="width:250px; ">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Lunch End</label>
+                    <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Lunch&nbsp;End</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="lunchEnd" style="width:250px;">
+                      <input type="time" class="form-control" id="lunchEnd" style="width:250px;">
                     </div>
                   </div>
 
                   <div class="form-group row ">
-                    <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Time out</label>
+                    <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Time&nbsp;out</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="TimeOut" style="width:250px;" >
+                      <input type="time" class="form-control" id="TimeOut" style="width:250px;" >
                     </div>
                   </div>
                   <button type="button"  class="btn btn-Secondary button1 ">Cancel</button>
