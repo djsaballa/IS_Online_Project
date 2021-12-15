@@ -69,12 +69,12 @@
 
         <br>
 
-        @if (Session::has('succesful-deletion'))
-            <div class="alert alert-success" role="alert" style="text-align:center;">{!! Session::get('succesful-deletion') !!}</div>
+        @if (Session::has('alert-succesful'))
+            <div class="alert alert-success" role="alert" style="text-align:center;">{!! Session::get('alert-succesful') !!}</div>
         @endif
 
-        @if (Session::has('unsuccesful-deletion'))
-            <div class="alert alert-danger" role="alert" style="text-align:center;">{!! Session::get('unsuccesful-deletion') !!}</div>
+        @if (Session::has('alert-unsuccesful'))
+            <div class="alert alert-danger" role="alert" style="text-align:center;">{!! Session::get('alert-unsuccesful') !!}</div>
         @endif
 
         <br>
@@ -104,15 +104,15 @@
                 <td>{{ $employee_timesheet->lunch_end }}</td>
                 <td>{{ $employee_timesheet->time_out }}</td>
                 <td>
-                  <a href="{{ route('admin_edit_timesheet', $employee_timesheet->id) }}" onClick="getTimesheetId( {{ $employee_timesheet->id }} )">
+                  <a href="{{ route('admin_edit_timesheet', $employee_timesheet->id) }}">
                     <button  class="btnbtn btn-primary" id="button" >
                       Edit
-                     </button>
+                    </button>
                   </a>
                   <a href="#" onClick="getTimesheetId( {{ $employee_timesheet->id }} )"  data-toggle="modal" data-target="#deleteConfirmation">
                     <button  class="btnbtn btn-danger" id="button" >
                       Delete
-                     </button>
+                    </button>
                   </a>
                 </td>
               </tr>

@@ -66,7 +66,7 @@ class EmployeeController extends Controller
 
         $exist = Timesheet::where('date', $date)->where('employee_id', $employee_id)->first();
 
-        if(!$exist) {
+        if(is_null($exist)) {
             $timesheet = Timesheet::create([
                 'employee_id' => $employee_id,
                 'date' => $date,
@@ -115,8 +115,8 @@ class EmployeeController extends Controller
         $employee_info = Employee::where('id', '=', $employee_id)->first();
         $employee_timesheets = Timesheet::where('employee_id', $employee_id)->get();
 
-        if($exist_time_in) {
-            if(!$exist_time_out) {
+        if(!is_null($exist_time_in)) {
+            if(is_null($exist_time_out)) {
                 $update = $exist->update(['time_out' => $time]);
                 if($update) {
                     Session::flash('alert-successful', 'You have successfully timed out.');
@@ -150,8 +150,8 @@ class EmployeeController extends Controller
         $employee_info = Employee::where('id', '=', $employee_id)->first();
         $employee_timesheets = Timesheet::where('employee_id', $employee_id)->get();
 
-        if($exist_time_in) {
-            if(!$exist_lunch_start) {
+        if(!is_null($exist_time_in)) {
+            if(is_null($exist_lunch_start)) {
                 $update = $exist->update(['lunch_start' => $time]);
                 if($update) {
                     Session::flash('alert-successful', 'You have successfully started your lunch break.');
@@ -185,8 +185,8 @@ class EmployeeController extends Controller
         $employee_info = Employee::where('id', '=', $employee_id)->first();
         $employee_timesheets = Timesheet::where('employee_id', $employee_id)->get();
 
-        if($exist_lunch_start) {
-            if(!$exist_lunch_end) {
+        if(!is_null($exist_lunch_start)) {
+            if(is_null($exist_lunch_end)) {
                 $update = $exist->update(['lunch_end' => $time]);
                 if($update) {
                     Session::flash('alert-successful', 'You have successfully ended your lunch break.');
@@ -198,7 +198,6 @@ class EmployeeController extends Controller
             } else {
                 Session::flash('alert-unsuccessful', 'You have already ended your lunch break.');
                 return view(('employee.view-timesheets'), compact('employee_info', 'employee_timesheets', 'today')); 
-
             }
         } else {
             Session::flash('alert-unsuccessful', 'You have not yet timed in.');
