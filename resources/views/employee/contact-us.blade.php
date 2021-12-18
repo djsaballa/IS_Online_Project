@@ -13,7 +13,7 @@
 			crossorigin="anonymous"></script>		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Styles -->
-    <link rel="stylesheet" href="{{url('css/password.css')}}">
+    <link rel="stylesheet" href="{{url('css/contact-us.css')}}">
 	</head>
 
   <body>
@@ -71,7 +71,7 @@
         <br><br>
 
           
-        <div class="wrap">
+        <div class="rap">
             <div class="box">
                 <div > 
                     <span  style="color:white; font-weight: 500; font-size:larger;">Get in touch</span>
@@ -81,7 +81,7 @@
                   <form >
                     <h6 style="margin-left: -70px; margin-right: -70px; margin-top: -15px; font-weight: bold; ">Questions, bug reports, feedback --- we&apos;re here for it all. Here&apos;s where you can reach us.</h6>
                     <div class="form-group">
-                      <label for="fname" style="font-weight: bold; margin-top: 40px;">Email: <a href="mailto:siomai.corporation@gmail.com"> <span style="font-weight:lighter; margin-left: 20px;">siomai.corporation@gmail.com</span> </a> </label>
+                      <label for="fname" style="font-weight: bold; margin-top: 40px;">Email: <a class="a" href="mailto:siomai.corporation@gmail.com"> <span style="font-weight:lighter; margin-left: 20px;">siomai.corporation@gmail.com</span> </a> </label>
                     </div>
                     <div class="form-group">
                       <label for="fname" style="font-weight: bold;">Hotmail: <span style="font-weight:lighter; margin-left: 20px;">1900 1234</span></label>

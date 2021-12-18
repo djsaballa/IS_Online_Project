@@ -1,7 +1,7 @@
 body {
 	background: #E5E5E5;
 	margin: 0;
-    background-image: url('https://scontent.fsfs2-1.fna.fbcdn.net/v/t39.30808-6/p843x403/266869661_3032278460344285_2954157452508513689_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeFEc1EIQjWkVkfhfJkGnC0G0IdDei67HqrQh0N6Lrseqhie_rZ_2KUunqXJzFJ-nT8PzawbkBN-tGwiSauYJsE-&_nc_ohc=8cZvGVU9O7QAX-Lcw53&_nc_ht=scontent.fsfs2-1.fna&oh=00_AT-aluX4o6be_Egm06Yxozj3ra89QEx1zBC060Ch_jVs9g&oe=61BE4D95');
+    background-image: url('https://st2.depositphotos.com/1265075/7446/i/600/depositphotos_74468913-stock-photo-contact-us-icons-on-cubes.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -113,8 +113,8 @@ a , a:hover , a:focus {
 	
 }
 
-.wrap {
-	height: 60%;
+.rap {
+	height: 340px;
     margin: auto;
     margin-top: 80px;
     width: 55%;

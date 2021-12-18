@@ -61,7 +61,7 @@
               <i class="fa fa-align-left"></i>
             </button>
             <div id="up">
-              <span style="margin-left:-480px;"><i class="far fa-clock " style="margin-right:5px; font-size:18px"></i></span>Today's Timesheet </a>
+              <span style="margin-left: -450px;"><i class="far fa-clock " style="margin-right:5px; font-size:18px"></i></span>Today's Timesheet </a>
             </div>	
             <div id="admin">
               <span> Administrator </span> <img style="width:25px; height:25px; " src="https://png.pngitem.com/pimgs/s/4-40070_user-staff-man-profile-user-account-icon-jpg.png" 
