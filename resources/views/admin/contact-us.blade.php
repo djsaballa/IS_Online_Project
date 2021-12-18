@@ -41,7 +41,7 @@
         <li>
             <a href="#Today's Timesheet">
             <span><i class="fas fa-phone-square-alt" style="margin-left:30px;"></i></span> Contact Us</a>
-        </li>
+          </li>
       </ul>
       <div class="sidebar-bottom">	
         <div class="logout">
@@ -59,8 +59,8 @@
                 <i class="fa fa-align-left"></i>
               </button>
             <div id="up">
-              <span style="margin-left:-450px;"><i class="fas fa-lock"style="margin-right:5px; font-size:19px"></i></span>Change Password</a>
-            </div>	
+              <img style="width: 25px; height: 25px; margin-left: -450px;" src="https://www.iconpacks.net/icons/2/free-contact-icon-3018-thumb.png"><span style="margin-left: 5px;">Contact Us</span>
+            </div>		
             <div id="admin">
               <span> Administrator </span> <img style="width:25px; height:25px; " src="https://png.pngitem.com/pimgs/s/4-40070_user-staff-man-profile-user-account-icon-jpg.png" 
                 alt="Avatar">
@@ -74,35 +74,25 @@
         <div class="wrap">
             <div class="box">
                 <div > 
-                    <span  style="color:white; font-weight: 500; font-size:larger;">Change Password</span>
+                    <span  style="color:white; font-weight: 500; font-size:larger;">Get in touch</span>
                 </div>
-                @foreach ($errors->all() as $error)
-                  <li class="text-danger text-md-center">{{ $error }}</li>
-                @endforeach 
                 <div class="form">
-                    <form method="POST" action="{{ route('admin_update_password') }}">
-                      @csrf
-                      <input type="hidden" id="employee_id" name="employee_id" value="{{ $employee_info->getId() }}">
-
-                        <div class="form-group">
-                          <label for="fname" style="font-weight: bold;">Name: {{ $employee_info->getFirstLast() }}</label>
-                        </div>
-                        <div class="form-group">
-                          <label for="fname" style="font-weight: bold;">Email: {{ $employee_info->getEmail() }}</label>
-                        </div>
-                        <div class="form-group">
-                          <label for="fname" style="font-weight: bold;">New Password:</label>
-                          <input type="username" class="form-control" id="new_password"  name="new_password">
-                        </div>
-                        <div class="form-group">
-                          <label for="fname" style="font-weight: bold; margin-top:10px;">Confirm Password:</label>
-                          <input type="password" class="form-control" id="new_confirm_password" name="new_confirm_password">
-                        </div>
-                        <br>
-                        <br>
-                        <button type="submit" id="button" class="btn btn-primary btn-block" >Update Password</button>
-                           
-                    </form>
+                
+                  <form >
+                    <h6 style="margin-left: -70px; margin-right: -70px; margin-top: -15px; font-weight: bold; ">Questions, bug reports, feedback --- we&apos;re here for it all. Here&apos;s where you can reach us.</h6>
+                    <div class="form-group">
+                      <label for="fname" style="font-weight: bold; margin-top: 40px;">Email: <span style="font-weight:lighter; margin-left: 20px;">siomai.corporation@gmail.com</span></label>
+                    </div>
+                    <div class="form-group">
+                      <label for="fname" style="font-weight: bold;">Hotmail: <span style="font-weight:lighter; margin-left: 20px;">1900 1234</span></label>
+                    </div>
+                    <div class="form-group">
+                      <label for="fname" style="font-weight: bold;">Social Media Accounts: <span style="margin-left: 10px; color: #3b5998;"><i class="fab fa-facebook-square" style="margin-right:5px; font-size:23px"></i> </span>
+                        <span style=" margin-left: 3px; color: #00acee;"><i class="fab fa-twitter-square" style=" font-size:23px "></i> </span>
+                      </label>
+                    </div>
+                         
+                  </form>
                 </div>
             </div>
         </div>

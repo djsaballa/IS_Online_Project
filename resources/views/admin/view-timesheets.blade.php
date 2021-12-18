@@ -41,6 +41,10 @@
             <a href="{{ route('admin_todays_timesheet') }}">
             <span><i class="fas fa-calendar-day" style="margin-left:30px;"></i></span> Today's Timesheet</a>
           </li>
+          <li>
+            <a href="#Today's Timesheet">
+            <span><i class="fas fa-phone-square-alt" style="margin-left:30px;"></i></span> Contact Us</a>
+          </li>
         </ul>
         <div class="sidebar-bottom">	
           <div class="logout">
