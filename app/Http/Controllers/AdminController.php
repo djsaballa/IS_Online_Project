@@ -180,4 +180,11 @@ class AdminController extends Controller
 
         return view(('admin.todays-timesheet'), compact('timesheets_today'));
     }
+
+    // contact us
+    public function contactUs()
+    {  
+
+        return view(('admin.contact-us'));
+    }
 }

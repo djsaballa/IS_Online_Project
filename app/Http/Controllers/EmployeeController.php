@@ -100,6 +100,7 @@ class EmployeeController extends Controller
         }
     }
 
+    // time out
     public function publishTimeOut(Request $request) 
     {
         $employee_id = $request-> employeeId;
@@ -135,6 +136,7 @@ class EmployeeController extends Controller
         }
     }
 
+    // lunch start
     public function publishLunchStart(Request $request) 
     {
         $employee_id = $request-> employeeId;
@@ -170,6 +172,7 @@ class EmployeeController extends Controller
         }
     }
 
+    // lunch end
     public function publishLunchEnd(Request $request) 
     {
         $employee_id = $request-> employeeId;
@@ -203,5 +206,14 @@ class EmployeeController extends Controller
             Session::flash('alert-unsuccessful', 'You have not yet timed in.');
             return view(('employee.view-timesheets'), compact('employee_info', 'employee_timesheets', 'today')); 
         }
+    }
+
+    // contact us
+    public function contactUs($employee_id)
+    {
+        $employee_info = Employee::where('id', '=', $employee_id)->first();
+        $employee_timesheets = Timesheet::where('employee_id', $employee_id)->get();
+        
+        return view(('employee.contact-us'), compact('employee_timesheets', 'employee_info'));
     }
 }

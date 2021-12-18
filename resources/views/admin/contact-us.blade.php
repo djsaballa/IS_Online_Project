@@ -39,7 +39,7 @@
           <span><i class="fas fa-calendar-day" style="margin-left:30px;"></i></span> Today's Timesheet</a>
         </li>
         <li>
-            <a href="#Today's Timesheet">
+            <a href="{{ route('admin_contact_us') }}">
             <span><i class="fas fa-phone-square-alt" style="margin-left:30px;"></i></span> Contact Us</a>
           </li>
       </ul>
@@ -81,7 +81,7 @@
                   <form >
                     <h6 style="margin-left: -70px; margin-right: -70px; margin-top: -15px; font-weight: bold; ">Questions, bug reports, feedback --- we&apos;re here for it all. Here&apos;s where you can reach us.</h6>
                     <div class="form-group">
-                      <label for="fname" style="font-weight: bold; margin-top: 40px;">Email: <span style="font-weight:lighter; margin-left: 20px;">siomai.corporation@gmail.com</span></label>
+                      <label for="fname" style="font-weight: bold; margin-top: 40px;">Email: <a href="mailto:siomai.corporation@gmail.com"> <span style="font-weight:lighter; margin-left: 20px;">siomai.corporation@gmail.com</span> </a> </label>
                     </div>
                     <div class="form-group">
                       <label for="fname" style="font-weight: bold;">Hotmail: <span style="font-weight:lighter; margin-left: 20px;">1900 1234</span></label>

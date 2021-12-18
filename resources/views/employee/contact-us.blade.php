@@ -23,29 +23,29 @@
     <nav id="sidebar">
 
       <div class="sidebar-header">
-          <div class="logo">
-            <img src="{{url('/images/logo.png')}}" alt="Image"/>
-          </div>
-        <h5 style="text-align: center;">Attendance Management System</h5>
+        <div class="logo">
+          <img src="{{url('/images/logo.png')}}" alt="Image"/>
+        </div>
+        <h5 style="text-align: center;"> Attendance Management System</h5>
       </div>
-
+      
       <ul class="lisst-unstyled components">
         <li>
-          <a href="{{ route('admin_view_employees') }}" >
-          <span><i class="fas fa-users" style="margin-left:30px;"></i></span> View Employees</a>
+          <a href="{{ route('employee_take_attendance', $employee_info->id) }}" >
+          <span><i class="fas fa-user-clock" style="margin-left:30px;"></i></span> Take Attendance</a>
         </li>
         <li>
-          <a href="{{ route('admin_todays_timesheet') }}">
-          <span><i class="fas fa-calendar-day" style="margin-left:30px;"></i></span> Today's Timesheet</a>
+          <a href="{{ route('employee_view_timesheets', $employee_info->id) }}">
+          <span><i class="fas fa-calendar-week" style="margin-left:30px; width: 10px; margin-right:10px;"></i></span> View Timesheets</a>
         </li>
         <li>
-            <a href="#Today's Timesheet">
-            <span><i class="fas fa-phone-square-alt" style="margin-left:30px;"></i></span> Contact Us</a>
+          <a href="{{ route('employee_contact_us', $employee_info->id) }}">
+          <span><i class="fas fa-phone-square-alt" style="margin-left:30px;"></i></span> Contact Us</a>
         </li>
       </ul>
       <div class="sidebar-bottom">	
         <div class="logout">
-          <a href="/admin/login">
+          <a href="/">
           <i class="fas fa-sign-out-alt" style="margin-left:30px; "></i> Logout</a>
         </div>
       </div>
@@ -81,7 +81,7 @@
                   <form >
                     <h6 style="margin-left: -70px; margin-right: -70px; margin-top: -15px; font-weight: bold; ">Questions, bug reports, feedback --- we&apos;re here for it all. Here&apos;s where you can reach us.</h6>
                     <div class="form-group">
-                      <label for="fname" style="font-weight: bold; margin-top: 40px;">Email: <span style="font-weight:lighter; margin-left: 20px;">siomai.corporation@gmail.com</span></label>
+                      <label for="fname" style="font-weight: bold; margin-top: 40px;">Email: <a href="mailto:siomai.corporation@gmail.com"> <span style="font-weight:lighter; margin-left: 20px;">siomai.corporation@gmail.com</span> </a> </label>
                     </div>
                     <div class="form-group">
                       <label for="fname" style="font-weight: bold;">Hotmail: <span style="font-weight:lighter; margin-left: 20px;">1900 1234</span></label>
