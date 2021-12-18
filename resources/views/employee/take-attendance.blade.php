@@ -38,6 +38,10 @@
               <a href="{{ route('employee_view_timesheets', $employee_info->id) }}">
               <span><i class="fas fa-calendar-week" style="margin-left:30px; width: 10px; margin-right:10px;"></i></span> View Timesheets</a>
             </li>
+            <li>
+              <a href="#Today's Timesheet">
+              <span><i class="fas fa-phone-square-alt" style="margin-left:30px;"></i></span> Contact Us</a>
+           </li>
           </ul>
           <div class="sidebar-bottom">	
             <div class="logout">
