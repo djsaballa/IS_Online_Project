@@ -39,7 +39,7 @@
               <span><i class="fas fa-calendar-week" style="margin-left:30px; width: 10px; margin-right:10px;"></i></span> View Timesheets</a>
             </li>
             <li>
-              <a href="#Today's Timesheet">
+              <a href="{{ route('employee_contact_us', $employee_info->id) }}">
               <span><i class="fas fa-phone-square-alt" style="margin-left:30px;"></i></span> Contact Us</a>
            </li>
           </ul>

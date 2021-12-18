@@ -42,7 +42,7 @@
             <span><i class="fas fa-calendar-day" style="margin-left:30px;"></i></span> Today's Timesheet</a>
           </li>
           <li>
-            <a href="#Today's Timesheet">
+            <a href="{{ route('admin_contact_us') }}">
             <span><i class="fas fa-phone-square-alt" style="margin-left:30px;"></i></span> Contact Us</a>
           </li>
         </ul>

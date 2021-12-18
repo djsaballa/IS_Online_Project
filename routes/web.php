@@ -36,6 +36,9 @@ Route::get('/admin', function () {
     Route::post('/admin-update-password', [AdminController::class, 'updatePassword'])->name('admin_update_password');
     // today's timesheets
     Route::get('/admin-todays-timesheet', [AdminController::class, 'todaysTimesheet'])->name('admin_todays_timesheet');
+    // contact us
+    Route::get('/admin-contact-us', [AdminController::class, 'contactUs'])->name('admin_contact_us');
+
 
 // EMPLOYEE
 Route::get('/', function () {
@@ -55,6 +58,6 @@ Route::get('/', function () {
         Route::post('/employee-lunch-start/{employee_id}', [EmployeeController::class, 'publishLunchStart'])->name('employee_lunch_start');
         // lunch end
         Route::post('/employee-lunch-end/{employee_id}', [EmployeeController::class, 'publishLunchEnd'])->name('employee_lunch_end');
-
-
+    // contact us
+    Route::get('/employee-contact-us/{employee_id}', [EmployeeController::class, 'contactUs'])->name('employee_contact_us');
 
