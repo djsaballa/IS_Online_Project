@@ -22,7 +22,7 @@ class EmployeeController extends Controller
         $login_info = Employee::where('email', '=', $request->email)->first();
         $employee_id = $login_info->id;
 
-        if(!$login_info){
+        if(is_null($employee_id)){
             return back()->with('failEmail','Email not recognized');
         }else{
             //check password
