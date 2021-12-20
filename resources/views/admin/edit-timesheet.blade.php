@@ -97,7 +97,7 @@
                   <div class="form-group row">
                     <label  class="col-sm-2 col-form-label" style="font-weight: bold; ;">Time&nbsp;in</label>
                     <div class="col-sm-10">
-                      <input type="time" class="form-control" id="timeIn" name="timeIn" style="width:250px; " value="{{ $timesheet_data->time_in }}">
+                      <input  class="form-control" id="timeIn" name="timeIn" style="width:250px; " value="{{ $timesheet_data->time_in }}">
                     </div>
                     <p class="error text-md-center" style="color: red;">@error('timeIn'){{ $message }} @enderror</p>
                   </div>
@@ -105,7 +105,7 @@
                   <div class="form-group row">
                     <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Lunch&nbsp;Start</label>
                     <div class="col-sm-10"> 
-                      <input type="time" class="form-control" id="lunchStart" name="lunchStart" style="width:250px; " value="{{ $timesheet_data->lunch_start }}">
+                      <input  class="form-control" id="lunchStart" name="lunchStart" style="width:250px; " value="{{ $timesheet_data->lunch_start }}">
                     </div>
                     <p class="error text-md-center" style="color: red;">@error('lunchStart'){{ $message }} @enderror</p>
                   </div>
@@ -113,7 +113,7 @@
                   <div class="form-group row">
                     <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Lunch&nbsp;End</label>
                     <div class="col-sm-10">
-                      <input type="time" class="form-control" id="lunchEnd" name="lunchEnd" style="width:250px;" value="{{ $timesheet_data->lunch_end }}">
+                      <input class="form-control" id="lunchEnd" name="lunchEnd" style="width:250px;" value="{{ $timesheet_data->lunch_end }}">
                     </div>
                     <p class="error text-md-center" style="color: red;">@error('lunchEnd'){{ $message }} @enderror</p>
                   </div>
@@ -121,7 +121,7 @@
                   <div class="form-group row ">
                     <label  class="col-sm-2 col-form-label" style="font-weight: bold;">Time&nbsp;out</label>
                     <div class="col-sm-10">
-                      <input type="time" class="form-control" id="timeOut" name="timeOut" style="width:250px;" value="{{ $timesheet_data->time_out }}">
+                      <input  class="form-control" id="timeOut" name="timeOut" style="width:250px;" value="{{ $timesheet_data->time_out }}">
                     </div>
                     <p class="error text-md-center" style="color: red;">@error('timeOut'){{ $message }} @enderror</p>
                   </div>
