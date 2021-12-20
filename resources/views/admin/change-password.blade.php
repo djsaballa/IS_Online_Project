@@ -93,10 +93,12 @@
                         <div class="form-group">
                           <label for="fname" style="font-weight: bold;">New Password:</label>
                           <input type="username" class="form-control" id="new_password"  name="new_password">
+                          <p class="error text-md-center" style="color: red;">@error('new_password'){{ $message }} @enderror</p>
                         </div>
                         <div class="form-group">
                           <label for="fname" style="font-weight: bold; margin-top:10px;">Confirm Password:</label>
                           <input type="password" class="form-control" id="new_confirm_password" name="new_confirm_password">
+                          <p class="error text-md-center" style="color: red;">@error('new_confirm_password'){{ $message }} @enderror</p>
                         </div>
                         <br>
                         <br>
