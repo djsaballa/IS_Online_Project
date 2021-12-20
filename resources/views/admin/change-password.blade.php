@@ -76,9 +76,6 @@
                 <div > 
                     <span  style="color:white; font-weight: 500; font-size:larger;">Change Password</span>
                 </div>
-                @foreach ($errors->all() as $error)
-                  <li class="text-danger text-md-center">{{ $error }}</li>
-                @endforeach 
                 <div class="form">
                     <form method="POST" action="{{ route('admin_update_password') }}">
                       @csrf
