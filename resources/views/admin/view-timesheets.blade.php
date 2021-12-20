@@ -48,7 +48,7 @@
         </ul>
         <div class="sidebar-bottom">	
           <div class="logout">
-            <a href="/admin/login">
+            <a href="/admin">
             <i class="fas fa-sign-out-alt" style="margin-left:30px; "></i> Logout</a>
           </div>
         </div>
