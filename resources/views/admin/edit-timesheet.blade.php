@@ -32,11 +32,11 @@
           <ul class="lisst-unstyled components">
             <li>
               <a href="{{ route('admin_view_employees') }}" >
-              <span><i class="fas fa-user-clock" style="margin-left:30px;"></i></span> Take Attendance</a>
+              <span><i class="fas fa-user-clock" style="margin-left:30px;"></i></span> View Employees</a>
             </li>
             <li>
               <a href="{{ route('admin_todays_timesheet') }}">
-              <span><i class="fas fa-calendar-week" style="margin-left:30px; width: 10px; margin-right:10px;"></i></span> View Timesheets</a>
+              <span><i class="fas fa-calendar-week" style="margin-left:30px; width: 10px; margin-right:10px;"></i></span> Today's Timesheets</a>
             </li>
             <li>
             <a href="{{ route('admin_contact_us') }}">
