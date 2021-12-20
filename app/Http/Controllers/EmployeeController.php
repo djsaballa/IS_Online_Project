@@ -20,15 +20,16 @@ class EmployeeController extends Controller
         ]);
 
         $login_info = Employee::where('email', '=', $request->email)->first();
-        $employee_id = $login_info->id;
+        
 
-        if(is_null($employee_id)){
+        if(!$login_info){
             return back()->with('failEmail','Email not recognized');
         }else{
             //check password
             if($request->password != $login_info->password){
                 return back()->with('failPass','Incorrect password');
             }else{
+                $employee_id = $login_info->id;
                 return redirect(route('employee_view_timesheets', $employee_id));
             }
         }
